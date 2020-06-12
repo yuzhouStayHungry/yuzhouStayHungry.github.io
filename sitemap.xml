@@ -3,8 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yuzhoustayhungry.github.io/tags/go/</loc>
+    <lastmod>2020-06-12T22:13:27+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yuzhoustayhungry.github.io/post/</loc>
-    <lastmod>2020-06-11T22:13:27+08:00</lastmod>
+    <lastmod>2020-06-12T22:13:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yuzhoustayhungry.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8/</loc>
+    <lastmod>2020-06-12T22:13:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yuzhoustayhungry.github.io/</loc>
+    <lastmod>2020-06-12T22:13:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yuzhoustayhungry.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-06-12T22:13:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yuzhoustayhungry.github.io/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/</loc>
+    <lastmod>2020-06-12T22:13:27+08:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +39,6 @@
   
   <url>
     <loc>https://yuzhoustayhungry.github.io/post/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/</loc>
-    <lastmod>2020-06-11T22:13:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yuzhoustayhungry.github.io/</loc>
     <lastmod>2020-06-11T22:13:27+08:00</lastmod>
   </url>
   
