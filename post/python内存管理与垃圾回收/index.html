@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.72.0" />
+
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.2.0/favicons/favicon.ico" />
+
+
+
+<title>深入理解Python内存管理与垃圾回收，再也不怕问了（一） - 宇宙之一粟的小屋</title>
+
+
+<meta name="author" content="宇宙之一粟" />
+
+
+<meta name="description"
+      content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="Python" />
+
+
+<meta property="og:title" content="深入理解Python内存管理与垃圾回收，再也不怕问了（一）" />
+<meta property="og:description" content="面试官：听说你学Python？那你给我讲讲Python如何进行内存管理？ 我：？？？内存管理不太清楚额。。。 面试官：那你知道Python垃圾回收吗？ 我：（尴尬一下后，还好我看到过相关博客）Python垃" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuzhoustayhungry.github.io/post/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" />
+<meta property="og:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
+<meta property="article:published_time" content="2020-05-22T22:13:27+08:00" />
+<meta property="article:modified_time" content="2020-05-22T22:13:27+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
+
+<meta name="twitter:title" content="深入理解Python内存管理与垃圾回收，再也不怕问了（一）"/>
+<meta name="twitter:description" content="面试官：听说你学Python？那你给我讲讲Python如何进行内存管理？ 我：？？？内存管理不太清楚额。。。 面试官：那你知道Python垃圾回收吗？ 我：（尴尬一下后，还好我看到过相关博客）Python垃"/>
+
+
+
+
+
+<link rel="stylesheet" href="/assets/css/fuji.min.css" />
+
+
+
+
+
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+    
+    var fujiThemeData = localStorage.getItem('fuji_data-theme');
+    
+    if (!fujiThemeData) {
+        localStorage.setItem('fuji_data-theme', 'auto');
+    } else {
+        
+        if (fujiThemeData !== 'auto') {
+            document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+        }
+    }
+</script>
+<script data-cfasync="false">
+    
+    var ua = window.navigator.userAgent;
+
+    function browserDetection() {
+        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0 || ua.indexOf('Edge/') > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    if (browserDetection()) {
+        window.location.href('https:\/\/yuzhoustayhungry.github.io\/ie\/');
+    }
+</script>
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://yuzhoustayhungry.github.io/">宇宙之一粟的小屋</a>
+            
+            <span class="title-sub">热爱文学和技术，用有趣的知识武装头脑，分享简单的快乐</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://yuzhoustayhungry.github.io/post/python%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">深入理解Python内存管理与垃圾回收，再也不怕问了（一）</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-05-22</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;4065 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;9 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/python">Python</a>&nbsp;</span>
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <p>面试官：听说你学Python？那你给我讲讲Python如何进行内存管理？</p>
+<p>我：？？？内存管理不太清楚额。。。</p>
+<p>面试官：那你知道Python垃圾回收吗？</p>
+<p>我：（尴尬一下后，还好我看到过相关博客）Python垃圾回收引用计数为主、标记清除和分代回收为主。</p>
+<p>面试官：那你仔细讲讲这三种垃圾回收技术？</p>
+<p>我：卒。。。</p>
+<p><img class="img-zoomable" src="https://img-blog.csdnimg.cn/20200428010001130.jpeg?type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l1emhvdV8xc2h1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" /></p>
+<p>内存的管理简单来说：分配（malloc）+回收（free）。</p>
+<blockquote>
+<p>再我们看文章之前，先思考一下：如果是你设计，会怎么进行内存管理？
+答：好，不会设计（笔主也不会），会的大佬请绕过。我们一起了解看看Python是怎么设计的。
+为了提高效率就是：</p>
+</blockquote>
+<ul>
+<li>如何高效分配？</li>
+<li>如何有效回收？</li>
+</ul>
+<h1 id="什么是内存">什么是内存</h1>
+<p>买电脑的配置“4G + 500G / 1T”，这里的4G就是指电脑的内存容量，而电脑的硬盘 500G / 1T。</p>
+<p>内存（Memory，全名指内部存储器），自然就会想到外存，他们都硬件设备。</p>
+<p>内存是计算机中重要的部件之一，它是外存与CPU进行沟通的桥梁。计算机中所有程序的运行都是在内存中进行的，因此内存的性能对计算机的影响非常大。</p>
+<h1 id="内存就像一本空白的书">内存就像一本空白的书</h1>
+<p>首先，您可以将计算机的存储空间比作一本空白的短篇小说。页面上还没有任何内容。最终，会有不同的作者出现。每个作者都需要一些空间来写他们的故事。</p>
+<p>由于不允许彼此书写，因此必须注意他们能书写的页面。开始书写之前，请先咨询书籍管理员。然后，管理员决定允许他们在书中写什么。</p>
+<p>如果这书已经存在很长时间了，因此其中的许多故事都不再适用。当没有人阅读或引用故事时，它们将被删除以为新故事腾出空间。</p>
+<p>本质上，计算机内存就像一本空书。实际上，调用固定长度的连续内存<strong>页</strong>面块是很常见的，因此这种类比非常适用。</p>
+<p>作者就像需要将数据存储在内存中的不同应用程序或进程。决定作者在书中书写位置的管理员就像是各种存储器管理的角色，删除旧故事为新故事腾出空间的人是<strong>垃圾收集者</strong>（garbage collector）。</p>
+<blockquote>
+<p>以上类比出自<a href="https://realpython.com/python-memory-management/" target="_blank">此文</a></p>
+</blockquote>
+<h1 id="内存管理从硬件到软件">内存管理：从硬件到软件</h1>
+<p>为什么4G内存的电脑可以高效的分析上G的数据，而且程序可以一直跑下去。</p>
+<p>在这4G内存的背后，Python都帮助我们做了什么？</p>
+<p>内存管理是应用程序读取和写入数据的过程。内存管理器确定将应用程序数据放置在何处。</p>
+<p>由于内存有限，类比书中的页面一样，管理员必须找到一些可用空间并将其提供给应用程序。提供内存的过程通常称为<strong>内存分配。</strong></p>
+<p>其实如果我们了解内存管理机制，以更快、更好的方式解决问题。</p>
+<p>看完本篇文章，带您稍微了解Python内存管理的设计哲学。</p>
+<h1 id="对象管理">对象管理</h1>
+<p>可能我们听过，Python鼎鼎有名的那句“<strong>一切皆对象</strong>”。是的，在Python中数字是对象，字符串是对象，任何事物都是对象，Cpython下，而Python对象实现的核心就是一个结构体&ndash;PyObject。</p>
+<pre><code class="language-c">typedef struct_object{
+
+　　int ob_refcnt;
+
+　　struct_typeobject *ob_type;
+
+}PyObject;
+</code></pre>
+<p>PyObject是每个对象必有的内容，可以说是Python中所有对象的祖父，仅包含两件事：</p>
+<ul>
+<li>ob_refcnt：引用计数（reference count）</li>
+<li>ob_type：指向另一种类型的指针(pointer to another type)</li>
+</ul>
+<p>所以，所以CPython是用C编写的，它解释了Python字节码。这与内存管理有什么关系？</p>
+<blockquote>
+<p>好吧，C中的CPython代码中存在内存管理算法和结构。要了解Python的内存管理，您必须对CPython本身有一个基本的了解。其他我们也不深究，感兴趣的同学自行了解。</p>
+</blockquote>
+<h1 id="cpython的内存管理">CPython的内存管理</h1>
+<blockquote>
+<p>注：这一块内容在网上找了很多内容，看了好久也没懂，自己太菜。唯一看懂的就是 Alexander VanTol的<a href="https://realpython.com/python-memory-management/" target="_blank">文章</a>相关部分内容，搬运过来哦放在此处，有删减，有兴趣的同学建议看原文。</p>
+</blockquote>
+<p>下图的深灰色框现在归Python进程所有。</p>
+<p><img class="img-zoomable" src="https://img-blog.csdnimg.cn/20200427234133501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l1emhvdV8xc2h1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<p>Python将部分内存用于内部使用和非对象内存。另一部分专用于对象存储（您的int，dict等）。请注意，这已被简化。如果您需要全貌，则可以看CPython源代码，所有这些内存管理都在其中进行。</p>
+<p>CPython有一个对象分配器，负责在对象内存区域内分配内存。这个对象分配器是大多数魔术发生的地方。每当新对象需要分配或删除空间时，都会调用该方法。</p>
+<p>通常，为list和int等Python对象添加和删除数据一次不会涉及太多数据。因此，分配器的设计已调整为可以一次处理少量数据。它还尝试在绝对需要之前不分配内存。</p>
+<p>现在，我们来看一下CPython的内存分配策略。首先，我们将讨论这三个主要部分以及它们之间的关系。</p>
+<h1 id="python的内存分配器">Python的内存分配器</h1>
+<h2 id="内存结构">内存结构</h2>
+<p>在Python中，当要分配内存空间时，不单纯使用 malloc/free，而是在其基础上堆放3个独立的分层，有效率地进行分配。</p>
+<p><img class="img-zoomable" src="https://img-blog.csdnimg.cn/20200428003203482.png?#pic_center" alt="在这里插入图片描述" />
+第 0 层往下是 OS 的功能。第 -2 层是隐含和机器的物理性相关联的部分，OS 的虚拟内 存管理器负责这部分功能。第 -1 层是与机器实际进行交互的部分，OS 会执行这部分功能。 因为这部分的知识已经超出了本书的范围，我们就不额外加以说明了。
+在第 3 层到第 0 层调用了一些具有代表性的函数，其调用图如下。
+<img class="img-zoomable" src="https://img-blog.csdnimg.cn/20200428003935156.png?type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l1emhvdV8xc2h1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" /></p>
+<h2 id="第0层-通用的基础分配器">第0层 通用的基础分配器</h2>
+<p>以 Linux 为例，第 0 层指的就是 glibc 的 malloc() 这样的分配器，是对 Linux 等 OS 申 请内存的部分。</p>
+<p>Python 中并不是在生成所有对象时都调用 malloc()，而是根据要分配的内存大小来改 变分配的方法。申请的内存大小如果大于 256 字节，就老实地调用 malloc();如果小于等 于 256 字节，就要轮到第 1 层和第 2 层出场了。</p>
+<blockquote>
+<p>更细致的过程：<a href="https://book.douban.com/subject/26821357/" target="_blank">垃圾回收机制的算法与实现</a></p>
+</blockquote>
+<h2 id="第1层-python低级内存分配器">第1层 Python低级内存分配器</h2>
+<p>Python 中使用的对象基本上都小于等于 256 字节，并且净是一些马上就会被废弃的对象。
+请看下面的例子。</p>
+<pre><code class="language-python">for x in range(100):
+	print(x)
+</code></pre>
+<p>上述 Python 脚本是把从 0 到 99 的非负整数 A 转化成字符串并输出的程序。这个程序会大量使用一次性的小字符串。</p>
+<p>在这种情况下，如果逐次查询第 0 层的分配器，就会发生频繁调用 malloc() 和 free() 的情况，这样一来效率就会降低。</p>
+<p>因此，在分配非常小的对象时，Python 内部会采用特殊的处理。实际执行这项处理的就是第 1 层和第 2 层的内存分配器。</p>
+<p>当需要分配小于等于 256 字节的对象时，就利用第 1 层的内存分配器。在这一层会事先 从第 0 层开始迅速保留内存空间，将其蓄积起来。第 1 层的作用就是管理这部分蓄积的空间。</p>
+<h3 id="第1层处理的信息的内存结构">第1层处理的信息的内存结构</h3>
+<p>根据所管理的内存空间的作用和大小的不同，我们称最小 的单位为 block，最终返回给申请者的就是这个 block 的地址。比 block 大的单位的是 pool， pool 内部包含 block。pool 再往上叫作 arena。
+<img class="img-zoomable" src="https://img-blog.csdnimg.cn/20200428004217825.png?type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l1emhvdV8xc2h1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" />
+也就是说 arena &gt; pool &gt; block，感觉很像俄罗斯套娃吧。
+为了避免频繁调用 malloc() 和 free()，第 0 层的分配器会以最大的单位 arena 来保留 内存。pool 是用于有效管理空的 block 的单位。
+arena 这个词有“竞技场”的意思。大家可以理解成竞技场里有很多个 pool，pool 里面漂 浮着很多个 block，这样或许更容易理解一些。</p>
+<h3 id="arena">arena</h3>
+<p>Arenas是最大的内存块，并在内存中的页面边界上对齐。页面边界是操作系统使用的固定长度连续内存块的边缘。Python假设系统的页面大小为256 KB。
+<img class="img-zoomable" src="https://img-blog.csdnimg.cn/20200428000227102.png?#pic_center" alt="在这里插入图片描述" />
+Arenas内有内存池，池是一个虚拟内存页（4 KB）。这些就像我们书中类比的页面。这些池被分成较小的内存块。</p>
+<p>给定池中的所有块均具有相同的“大小等级”。给定一定数量的请求数据，大小类定义特定的块大小。下图直接取自<a href="https://github.com/python/cpython/blob/7d6ddb96b34b94c1cbdf95baa94492c48426404e/Objects/obmalloc.c" target="_blank">源代码</a>注释：</p>
+<table>
+<thead>
+<tr>
+<th>Request in bytes</th>
+<th>Size of allocated block</th>
+<th>Size class idx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-8</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9-16</td>
+<td>16</td>
+<td>1</td>
+</tr>
+<tr>
+<td>17-24</td>
+<td>24</td>
+<td>2</td>
+</tr>
+<tr>
+<td>25-32</td>
+<td>32</td>
+<td>3</td>
+</tr>
+<tr>
+<td>33-40</td>
+<td>40</td>
+<td>4</td>
+</tr>
+<tr>
+<td>41-48</td>
+<td>48</td>
+<td>5</td>
+</tr>
+<tr>
+<td>49-56</td>
+<td>56</td>
+<td>6</td>
+</tr>
+<tr>
+<td>57-64</td>
+<td>64</td>
+<td>7</td>
+</tr>
+<tr>
+<td>65-72</td>
+<td>72</td>
+<td>8</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>497-504</td>
+<td>504</td>
+<td>62</td>
+</tr>
+<tr>
+<td>505-512</td>
+<td>512</td>
+<td>63</td>
+</tr>
+</tbody>
+</table>
+<p>这一点可以看<a href="https://docs.python.org/zh-cn/3/c-api/memory.html?highlight=pymalloc" target="_blank">Pymalloc</a></p>
+<ul>
+<li>
+<p>针对小对象(&lt;= 512 bytes)，Pymalloc会在内存池中申请内存空间</p>
+</li>
+<li>
+<p>&gt; 512bytes,则会PyMem_RawMalloc()和PyMem_RawRealloc()来申请新的内存空间</p>
+</li>
+</ul>
+<p>例如，如果请求42个字节，则将数据放入48字节大小的块中。</p>
+<h4 id="pool">pool</h4>
+<p>arena 内部各个 pool 的大小固定在 4K 字节。因为几乎对所有 OS 而言，其虚拟内存的页 面大小都是 4K 字节，所以我们也相应地把 pool 的大小设定为 4K 字节。</p>
+<h3 id="第1层总结">第1层总结</h3>
+<p>第 1 层的任务可以用一句话来总结，那就是“管理 arena”。</p>
+<h3 id="第2层-python对象分配器">第2层 Python对象分配器</h3>
+<p>第 2 层的分配器负责管理 pool 内的 block。
+这一层实际上是将 block 的开头地址返回给申请者，并释放 block 等。 那么我们来看看这一层是如何管理 block 的吧。</p>
+<h3 id="block">block</h3>
+<p>pool 被分割成一个个的 block。我们在 Python 中生成对象时，最终都会被分配这个 block (在要求大小不大于 256 字节的情况下)。
+以 block 为单位来划分，这是从 pool 初始化时就决定好的。这是因为我们一开始利用 pool 的时候就决定了“这是供 8 字节的 block 使用的 pool”。
+pool 内被 block 完全填满了，那么 pool 是怎么进行 block 的状态管理的呢?
+block 只有以下三种状态。</p>
+<ol>
+<li>已经分配</li>
+<li>使用完毕</li>
+<li>未使用</li>
+</ol>
+<h3 id="第3层-对象特有的分配器">第3层 对象特有的分配器</h3>
+<p>对象有列表和元组等多种多样的型，在生成它们的时候要使用各自特有的分配器。</p>
+<h3 id="分配器的总结">分配器的总结</h3>
+<p><img class="img-zoomable" src="https://img-blog.csdnimg.cn/20200428005309484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l1emhvdV8xc2h1,size_16,color_FFFFFF,t_70##pic_center" alt="在这里插入图片描述" /></p>
+<h1 id="赋值语句内存分析">赋值语句内存分析</h1>
+<p>我们可以通过使用<code>id()</code>函数来查看某个对象的内存地址，每个人的电脑内存地址不一样。</p>
+<pre><code class="language-python">a = 1
+id(a)  # Output: 4566652048
+b = 2
+id(b)	 # Output: 4566652080
+
+c = 8
+id(c)  # Output: 4566652272
+d = 8
+id(d)  # Output: 4566652272
+</code></pre>
+<p>使用 <code>==</code>来查看对象的值是否相等，<code>is</code>判断对象是否是同一个对象</p>
+<pre><code class="language-python">c == d  # Output: True
+c is d  # Output: True
+
+e = 888888888
+id(e)  # Output: 4569828784
+f = 888888888
+id(f)  # Output: 4569828880
+e == f  # Output: True
+e is f  # Output: False
+</code></pre>
+<p>解释：我们可以看到，</p>
+<ul>
+<li><code>c == d</code>输出 True 和 <code>c is d</code>也输出True，这是因为，对一个小一点的int变量赋值，Python在内存池（Pool）中分配给c和d同一块内存地址,</li>
+<li>而<code>e == f</code>为 True，值相同；<code>e is f</code>输出 False，并不少同一个对象。</li>
+</ul>
+<p>这是因为Python内存池中分配空间，赋予对象的类别并赋予其初始的值。从-5到256这些小的整数，在Python脚本中使用的非常频繁，又因为他们是不可更改的，因此只创建一次，重复使用就可以了。</p>
+<p>e 和 f数字比较大，所以只能重新分配地址来。其实-5到256之间的数字，Python都已经给我安排好了。</p>
+<pre><code class="language-python">&gt;&gt;&gt; i = 256
+&gt;&gt;&gt; j = 256
+&gt;&gt;&gt; i is j
+True
+&gt;&gt;&gt; i = 257
+&gt;&gt;&gt; j = 257
+&gt;&gt;&gt; i is j
+False
+&gt;&gt;&gt; i = -5
+&gt;&gt;&gt; j = -5
+&gt;&gt;&gt; i is j
+True
+&gt;&gt;&gt; i = -6
+&gt;&gt;&gt; j = -6
+&gt;&gt;&gt; i is j
+False
+</code></pre>
+<blockquote>
+<p>Java 也有这样的机制 缓存范围是 -128 ~ 127
+** Cache to support the object identity semantics of autoboxing for values between*
+** -128 and 127 (inclusive) as required by JLS.*</p>
+</blockquote>
+<p>接着，看对象的内存分析：</p>
+<pre><code class="language-python">li1 = []
+li2 = []
+li1 == li2  # Output: True
+li1 is li2  # Output: False
+
+x = 1
+y = x
+id(x)  # Output: 4566652048
+id(y)  # Output: 4566652048
+y = 2
+id(y)  # Output: 4566652080
+
+x == y  # Output: False
+x is y  # Output: False
+</code></pre>
+<blockquote>
+<p>文章有参考：</p>
+<ol>
+<li>对内存管理有兴趣的强烈推荐阅读： <a href="https://realpython.com/python-memory-management/" target="_blank">Memory Management in Python</a></li>
+<li><a href="https://book.douban.com/subject/26821357/" target="_blank">垃圾回收机制的算法与实现</a></li>
+</ol>
+</blockquote>
+
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#内存结构">内存结构</a></li>
+    <li><a href="#第0层-通用的基础分配器">第0层 通用的基础分配器</a></li>
+    <li><a href="#第1层-python低级内存分配器">第1层 Python低级内存分配器</a>
+      <ul>
+        <li><a href="#第1层处理的信息的内存结构">第1层处理的信息的内存结构</a></li>
+        <li><a href="#arena">arena</a></li>
+        <li><a href="#第1层总结">第1层总结</a></li>
+        <li><a href="#第2层-python对象分配器">第2层 Python对象分配器</a></li>
+        <li><a href="#block">block</a></li>
+        <li><a href="#第3层-对象特有的分配器">第3层 对象特有的分配器</a></li>
+        <li><a href="#分配器的总结">分配器的总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>文章</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml" target="_blank">RSS</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签云</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/python/">Python</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%80%9D%E8%80%83/">思考</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%BA%BF%E7%A8%8B/">线程</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>友情链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/yuzhouStayHungry" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://blog.csdn.net/yuzhou_1shu" target="_blank"><span>CSDN</span></a>
+            </li>
+            
+            <li>
+                <a href="https://www.jianshu.com/u/93e9b14c6fbd" target="_blank"><span>jianshu</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-toggle-mode">
+        <ion-icon name="contrast"></ion-icon>
+    </div>
+    <div class="btn-scroll-top">
+        <ion-icon name="chevron-up"></ion-icon>
+    </div>
+</div>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            <span>&copy; 2020 <a href="https://yuzhoustayhungry.github.io/">宇宙之一粟</a> |
+                基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> & <a href="https://gohugo.io/"
+                   target="_blank">Hugo</a> 构建</span>
+        </div>
+    </div>
+</footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
+
+<script src="/assets/js/fuji.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+</body>
+
+</html>
