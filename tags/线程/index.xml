@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>线程 on 宇宙之一粟的小屋</title>
-    <link>https://yuzhoustayhungry.github.io/tags/%E7%BA%BF%E7%A8%8B/</link>
+    <link>http://yuzhoustayhungry.github.io/tags/%E7%BA%BF%E7%A8%8B/</link>
     <description>Recent content in 线程 on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 11 Jun 2020 22:13:27 +0800</lastBuildDate>
     
-	<atom:link href="https://yuzhoustayhungry.github.io/tags/%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://yuzhoustayhungry.github.io/tags/%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>为什么校招面试中“线程与进程的区别”老是被问到?我该如何回答？</title>
-      <link>https://yuzhoustayhungry.github.io/post/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/</link>
+      <link>http://yuzhoustayhungry.github.io/post/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/</link>
       <pubDate>Thu, 11 Jun 2020 22:13:27 +0800</pubDate>
       
-      <guid>https://yuzhoustayhungry.github.io/post/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/</guid>
+      <guid>http://yuzhoustayhungry.github.io/post/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/</guid>
       <description>进程与线程？（Process vs. Thread？） 面试官（正襟危坐中）：给我说说“线程”与“进程”吧。 我（总是不太聪明的样子）：“限乘？”、“进什么城（程）？” 面试官：“操作系统中的进程与线程，你回去了解</description>
     </item>
     
