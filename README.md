@@ -8,7 +8,7 @@ My personal blog： [宇宙之一粟的小屋](https://yuzhoustayhungry.github.i
 - Go
 - 数据结构与算法
 - 生活思考
-- 待添加
+- ...
 
 # 博客使用主题
 
