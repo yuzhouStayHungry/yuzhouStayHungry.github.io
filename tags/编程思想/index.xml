@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>面向对象 on 宇宙之一粟的小屋</title>
-    <link>http://yuzhoustayhungry.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
-    <description>Recent content in 面向对象 on 宇宙之一粟的小屋</description>
+    <title>编程思想 on 宇宙之一粟的小屋</title>
+    <link>https://yuzhouStayHungry.github.io/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</link>
+    <description>Recent content in 编程思想 on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 11 Aug 2020 08:05:09 +0800</lastBuildDate>
     
-	<atom:link href="http://yuzhoustayhungry.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yuzhouStayHungry.github.io/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>走进面向“对象”编程的理想国（一）——深入理解Python中的一切皆对象</title>
-      <link>http://yuzhoustayhungry.github.io/post/%E5%AF%B9%E8%B1%A1%E7%90%86%E6%83%B3%E5%9B%BD%E7%AC%AC%E4%B8%80%E7%AF%87/</link>
+      <link>https://yuzhouStayHungry.github.io/post/%E5%AF%B9%E8%B1%A1%E7%90%86%E6%83%B3%E5%9B%BD%E7%AC%AC%E4%B8%80%E7%AF%87/</link>
       <pubDate>Tue, 11 Aug 2020 08:05:09 +0800</pubDate>
       
-      <guid>http://yuzhoustayhungry.github.io/post/%E5%AF%B9%E8%B1%A1%E7%90%86%E6%83%B3%E5%9B%BD%E7%AC%AC%E4%B8%80%E7%AF%87/</guid>
+      <guid>https://yuzhouStayHungry.github.io/post/%E5%AF%B9%E8%B1%A1%E7%90%86%E6%83%B3%E5%9B%BD%E7%AC%AC%E4%B8%80%E7%AF%87/</guid>
       <description>如何面向“对象” 天天跟我们这些苦逼的程序猿（媛）们喊着：“要面向对象编程”，你倒是给我新建一个对象嘛。你看看，都没有对象，我怎么面向对象编程嘛。网上关于Java和C++的面向对象编程相关介绍的博客文章</description>
     </item>
     
