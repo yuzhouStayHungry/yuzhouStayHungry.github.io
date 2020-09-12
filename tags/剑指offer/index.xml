@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>剑指offer on 宇宙之一粟的小屋</title>
+    <link>https://yuzhoustayhungry.github.io/tags/%E5%89%91%E6%8C%87offer/</link>
+    <description>Recent content in 剑指offer on 宇宙之一粟的小屋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 12 Sep 2020 11:01:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://yuzhoustayhungry.github.io/tags/%E5%89%91%E6%8C%87offer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>剑指offer 57：和为s的数字</title>
+      <link>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-57/</link>
+      <pubDate>Sat, 12 Sep 2020 11:01:10 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-57/</guid>
+      <description>面试题57: 和为s的数字 📖每日一句： “We hold ourselves back in ways both big and small, by lacking self-confidence, by not raising our hands, and by pulling back when we should be leaning in.” — Sheryl Sandberg 题目一：和为s的两个数字 题目描述： 输入一个递增排序的数组和一个数字s，在数组中查找两个数，使</description>
+    </item>
+    
+  </channel>
+</rss>
