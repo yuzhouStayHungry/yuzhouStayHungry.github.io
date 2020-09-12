@@ -22,10 +22,10 @@
 
 
 
-<title>宇宙之一粟的小屋 - 热爱文学和技术，用有趣的知识武装头脑，分享简单的快乐</title>
+<title>剑指offer 57 - 宇宙之一粟的小屋</title>
 
 
-<meta name="author" content="宇宙之一粟" />
+<meta name="author" content="yuzhou1su" />
 
 
 <meta name="description"
@@ -33,18 +33,19 @@
 
 
 
-<meta property="og:title" content="宇宙之一粟的小屋" />
-<meta property="og:description" content="A minimal Hugo theme with nice theme color." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://yuzhoustayhungry.github.io/" />
+<meta property="og:title" content="剑指offer 57" />
+<meta property="og:description" content="面试题57: 和为s的数字 📖每日一句： “We hold ourselves back in ways both big and small, by lacking self-confidence, by not raising our hands, and by pulling back when we should be leaning in.” — Sheryl Sandberg 题目一：和为s的两个数字 题目描述： 输入一个递增排序的数组和一个数字s，在数组中查找两个数，使" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-57/" />
 <meta property="og:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
-<meta property="og:updated_time" content="2020-09-12T11:01:10+08:00" />
+<meta property="article:published_time" content="2020-09-12T11:01:10+08:00" />
+<meta property="article:modified_time" content="2020-09-12T11:01:10+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
 
-<meta name="twitter:title" content="宇宙之一粟的小屋"/>
-<meta name="twitter:description" content="A minimal Hugo theme with nice theme color."/>
+<meta name="twitter:title" content="剑指offer 57"/>
+<meta name="twitter:description" content="面试题57: 和为s的数字 📖每日一句： “We hold ourselves back in ways both big and small, by lacking self-confidence, by not raising our hands, and by pulling back when we should be leaning in.” — Sheryl Sandberg 题目一：和为s的两个数字 题目描述： 输入一个递增排序的数组和一个数字s，在数组中查找两个数，使"/>
 
 
 
@@ -105,127 +106,145 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
         <a href="https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-57/">剑指offer 57</a>
     </h2>
     <div class="post-item post-meta">
         <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-09-12</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;697 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;2 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;无标签</span>
     </div>
-    <div class="post-item post-summary markdown-body">
-        面试题57: 和为s的数字 📖每日一句： “We hold ourselves back in ways both big and small, by lacking self-confidence, by not raising our hands, and by pulling back when we should be leaning in.” — Sheryl Sandberg 题目一：和为s的两个数字 题目描述： 输入一个递增排序的数组和一个数字s，在数组中查找两个数，使
+    
+    
+    <div class="post-content markdown-body">
+        <h1 id="面试题57-和为s的数字">面试题57: 和为s的数字</h1>
+<blockquote>
+<p>📖每日一句： “We hold ourselves back in ways both big and small, by lacking self-confidence, by not raising our hands, and by pulling back  when we should be leaning in.” — Sheryl Sandberg</p>
+</blockquote>
+<h2 id="题目一和为s的两个数字">题目一：和为s的两个数字</h2>
+<h3 id="题目描述">题目描述：</h3>
+<p>输入一个<strong>递增</strong>排序的数组和一个数字s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。</p>
+<p>示例 1：</p>
+<p>输入：nums = [2,7,11,15], target = 9
+输出：[2,7] 或者 [7,2]</p>
+<p>示例 2：</p>
+<p>输入：nums = [10,26,30,31,47,60], target = 40
+输出：[10,30] 或者 [30,10]</p>
+<p><strong>限制：</strong></p>
+<pre><code class="language-python">1 &lt;= nums.length &lt;= 10^5
+1 &lt;= nums[i] &lt;= 10^6
+</code></pre>
+<h3 id="解题思想">解题思想</h3>
+<ol>
+<li>暴力法</li>
+</ol>
+<p>首先选择数组一个数字，从剩下的n-1个数字找两数之和是不是等于s。</p>
+<pre><code class="language-python">def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return nums[i], nums[j]
+    return []
+</code></pre>
+<p>时间复杂度: $ O(n^2)$</p>
+<blockquote>
+<p>LeetCode提交超时：<strong>26 / 36</strong> 个通过测试用例</p>
+</blockquote>
+<ol start="2">
+<li>哈希表</li>
+</ol>
+<p>上面的代码用了两成循环，其实转化一下思想，能不能只用一个for循环呢？</p>
+<blockquote>
+<p>方法：TwoSum那道题</p>
+</blockquote>
+<p>作为一Pythoner，怎么会轻言放弃，办法是一定的。list不好使，那我们还有set呢。也就是哈希表法：利用一次遍历，先找一个数，然后依次遍历查看target-i是否在这个set中，如果在，即返回。</p>
+<pre><code class="language-python">class Solution:
+    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
+
+        li_set = set(nums)
+        for i in li_set:
+            if (target - i) in li_set:
+                return i, target - i
+        return []
+</code></pre>
+<p>时间复杂度: $ O(n)$，只使用了一次for遍历数组</p>
+<p>空间复杂度: $ O(n) $，此方法利用了一个set</p>
+<ol start="3">
+<li>双指针</li>
+</ol>
+<p>做出了上面的方法后，发现其实哈希表法并没有利用题目中给出<strong>递增</strong>排序数组的特点。利用递增的特点找到空间复杂度O(1)的解题方法&ndash;双指针对撞：</p>
+<blockquote>
+<p><a href="https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof/solution/mian-shi-ti-57-he-wei-s-de-liang-ge-shu-zi-shuang-/" target="_blank">算法流程可以查看此题解</a></p>
+</blockquote>
+<p>取两端</p>
+<pre><code class="language-python">class Solution:
+    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
+
+        rPointer, lPointer = 0, len(nums) - 1
+        while rPointer &lt; lPointer:
+
+            twoSum = nums[rPointer] + nums[lPointer]
+            if twoSum == target:
+                return nums[rPointer], nums[lPointer]
+            elif twoSum &gt; target:
+                lPointer -= 1
+            else:
+                rPointer += 1
+        return []
+</code></pre>
+<ol start="4">
+<li>别忘了二分查找啊</li>
+</ol>
+<p>“递增+有序”，难道二分查找不配有名字吗？</p>
+
     </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
 </div>
 
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://yuzhoustayhungry.github.io/post/%E5%AF%B9%E8%B1%A1%E7%90%86%E6%83%B3%E5%9B%BD%E7%AC%AC%E4%B8%80%E7%AF%87/">走进面向“对象”编程的理想国（一）——深入理解Python中的一切皆对象</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-08-11</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;2412 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;5 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/python">Python</a>&nbsp;<a href="/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3">编程思想</a>&nbsp;</span>
-    </div>
-    <div class="post-item post-summary markdown-body">
-        如何面向“对象” 天天跟我们这些苦逼的程序猿（媛）们喊着：“要面向对象编程”，你倒是给我新建一个对象嘛。你看看，都没有对象，我怎么面向对象编程嘛。网上关于Java和C++的面向对象编程相关介绍的博客文章
-    </div>
-</div>
 
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://yuzhoustayhungry.github.io/post/%E6%8E%92%E5%BA%8F%E7%9F%A5%E8%AF%86%E5%B8%B8%E8%80%83%E7%82%B9/">Python排序算法相关知识点学习</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-07-23</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;4856 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;10 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/python">Python</a>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95">数据结构与算法</a>&nbsp;</span>
-    </div>
-    <div class="post-item post-summary markdown-body">
-        排序算法 一般排序算法最常考的：快速排序和归并排序。这两个算法体现了分治算法的核心观点，而且还有很多出题的可能。 更多细节请参考刘宇波老师的：不能白板编程红黑树就是基础差？别扯了。 1. 常见的排序算法 排序算法
-    </div>
-</div>
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://yuzhoustayhungry.github.io/post/%E6%9F%A5%E6%89%BE%E7%9F%A5%E8%AF%86%E5%B8%B8%E8%80%83%E7%82%B9/">Python查找算法相关知识点学习</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-07-22</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;1149 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;3 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/python">Python</a>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95">数据结构与算法</a>&nbsp;</span>
-    </div>
-    <div class="post-item post-summary markdown-body">
-        查找算法 在LeetCode刷题或者面试过程中发现，查找问题一直是不可避免的。对任何数据结构的遍历过程无非就是查找过程。 我们需要针对某些数据结构的特点如何正确地、高效地进行查找，而查找的过程最需要注意边
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://yuzhoustayhungry.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8/">从Go语言开始，彻底学懂数据结构与算法--线性表</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-06-12</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;1029 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;3 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/go">Go</a>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95">数据结构与算法</a>&nbsp;</span>
-    </div>
-    <div class="post-item post-summary markdown-body">
-        [toc] 程序 = 数据结构 + 算法 数据结构是程序的骨架 算法是程序的灵魂 其实各种数据结构的要点&ndash;无外乎：定义 + 操作。 一、数组 / 顺序表 1. 静态分配 用一个定长数组data[]存储数据，最大空间为Maxsize
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<div class="pagination">
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="pag-item pag-current">
-        <a href="/">1</a>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="pag-item">
-        <a href="/page/2/">2</a>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="pag-item">
-        <a href="/page/3/">3</a>
-    </div>
-    
-    
-    
-    <div class="pag-next">
-        <a href="/page/2/"><ion-icon name="chevron-forward-circle"></ion-icon></i></a>
-    </div>
-    
-    
-    <div class="pag-last">
-        <a href="/page/3/"><ion-icon name="caret-forward-circle"></ion-icon></a>
-    </div>
-    
-</div>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'jQ6E95rSWyJnP3Vm6RD44X7T-gzGzoHsz',
+        appKey: 'ixeh3gWeKpul4xa6HKh5WErn',
+        notify: 'false', 
+        verify: 'false', 
+        avatar:'mm', 
+        placeholder: '谢谢你来了，说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
 
 
 
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#题目一和为s的两个数字">题目一：和为s的两个数字</a>
+      <ul>
+        <li><a href="#题目描述">题目描述：</a></li>
+        <li><a href="#解题思想">解题思想</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
     
     
     <div class="sidebar-item sidebar-pages">
