@@ -14,11 +14,9 @@ My personal blog： [宇宙之一粟的小屋](https://yuzhoustayhungry.github.i
 
 [🍥 Fuji 🍥](https://github.com/amzrk2/hugo-theme-fuji/)
 
-博客使用 git submodule 的方式引用的 fugi主题
+博客使用fugi主题: git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 
-# 自动化发布
 
-参考：autocommit.sh
 
 # 展示
 
