@@ -1,4 +1,4 @@
-# 基于Hugo+Gitpages搭建的个人静态网站
+# 基于Hugo+Git Pages搭建的个人静态网站
 
 My personal blog： [宇宙之一粟的小屋](https://yuzhoustayhungry.github.io/)
 
