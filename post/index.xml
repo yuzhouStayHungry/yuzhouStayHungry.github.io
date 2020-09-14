@@ -6,13 +6,22 @@
     <description>Recent content in Posts on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Sep 2020 16:00:07 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 09:11:02 +0800</lastBuildDate>
     
 	<atom:link href="https://yuzhoustayhungry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>剑指offer 25:合并两个有序链表</title>
+      <title>剑指Offer 面试题24: 反转链表</title>
+      <link>https://yuzhoustayhungry.github.io/post/sword-for-offer24/</link>
+      <pubDate>Mon, 14 Sep 2020 09:11:02 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/post/sword-for-offer24/</guid>
+      <description>面试题24：反转链表 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。 示例: 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL 思路： 迭代 遍历链表，使用指针cur指向当前节点，指针prev指向cur的前驱节点。 初始</description>
+    </item>
+    
+    <item>
+      <title>剑指Offer 面试题25:合并两个有序链表</title>
       <link>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Sun, 13 Sep 2020 16:00:07 +0800</pubDate>
       
@@ -21,7 +30,7 @@
     </item>
     
     <item>
-      <title>剑指offer 57：和为s的数字</title>
+      <title>剑指Offer 面试题 57：和为s的数字</title>
       <link>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-57/</link>
       <pubDate>Sat, 12 Sep 2020 11:01:10 +0800</pubDate>
       
