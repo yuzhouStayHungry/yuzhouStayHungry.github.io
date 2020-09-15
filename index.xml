@@ -6,10 +6,19 @@
     <description>Recent content on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Sep 2020 13:26:03 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 00:29:07 +0800</lastBuildDate>
     
 	<atom:link href="https://yuzhoustayhungry.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Django API开发：入门介绍</title>
+      <link>https://yuzhoustayhungry.github.io/post/djangoforapis-1/</link>
+      <pubDate>Wed, 16 Sep 2020 00:29:07 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/post/djangoforapis-1/</guid>
+      <description>[toc] 介绍 互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。 API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构</description>
+    </item>
     
     <item>
       <title>剑指Offer 面试题22：链表中倒数第k个节点</title>

@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yuzhoustayhungry.github.io/post/djangoforapis-1/</loc>
+    <lastmod>2020-09-16T00:29:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yuzhoustayhungry.github.io/tags/django-for-apis/</loc>
+    <lastmod>2020-09-16T00:29:07+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yuzhoustayhungry.github.io/post/</loc>
-    <lastmod>2020-09-15T13:26:03+08:00</lastmod>
+    <lastmod>2020-09-16T00:29:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yuzhoustayhungry.github.io/</loc>
+    <lastmod>2020-09-16T00:29:07+08:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +29,6 @@
   
   <url>
     <loc>https://yuzhoustayhungry.github.io/post/sword-for-offer22/</loc>
-    <lastmod>2020-09-15T13:26:03+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yuzhoustayhungry.github.io/</loc>
     <lastmod>2020-09-15T13:26:03+08:00</lastmod>
   </url>
   
