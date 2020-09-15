@@ -6,17 +6,26 @@
     <description>Recent content in Posts on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2020 00:29:07 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 01:29:18 +0800</lastBuildDate>
     
 	<atom:link href="https://yuzhoustayhungry.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Django API开发：入门介绍</title>
+      <title>Django for APIs: Web APIs 的由来</title>
       <link>https://yuzhoustayhungry.github.io/post/djangoforapis-1/</link>
-      <pubDate>Wed, 16 Sep 2020 00:29:07 +0800</pubDate>
+      <pubDate>Wed, 16 Sep 2020 01:29:18 +0800</pubDate>
       
       <guid>https://yuzhoustayhungry.github.io/post/djangoforapis-1/</guid>
+      <description>第一章：Web APIs 在开始构建自己的网络API之前，请务必先回顾网络的实际是怎样运行的。 毕竟，“ Web API”实际上位于万维网的现有体系结构之上，并且依赖于包括HTTP，IP / TCP等在内的多种技术。 在本章中</description>
+    </item>
+    
+    <item>
+      <title>Django API开发：入门介绍</title>
+      <link>https://yuzhoustayhungry.github.io/post/djangoforapis-0/</link>
+      <pubDate>Wed, 16 Sep 2020 00:29:07 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/post/djangoforapis-0/</guid>
       <description>[toc] 介绍 互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。 API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构</description>
     </item>
     

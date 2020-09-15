@@ -22,7 +22,7 @@
 
 
 
-<title>Django API开发：入门介绍 - 宇宙之一粟的小屋</title>
+<title>Django for APIs: Web APIs 的由来 - 宇宙之一粟的小屋</title>
 
 
 <meta name="author" content="yuzhou1su" />
@@ -35,19 +35,19 @@
 <meta name="keywords" content="Django for APIs" />
 
 
-<meta property="og:title" content="Django API开发：入门介绍" />
-<meta property="og:description" content="[toc] 介绍 互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。 API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构" />
+<meta property="og:title" content="Django for APIs: Web APIs 的由来" />
+<meta property="og:description" content="第一章：Web APIs 在开始构建自己的网络API之前，请务必先回顾网络的实际是怎样运行的。 毕竟，“ Web API”实际上位于万维网的现有体系结构之上，并且依赖于包括HTTP，IP / TCP等在内的多种技术。 在本章中" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yuzhoustayhungry.github.io/post/djangoforapis-1/" />
 <meta property="og:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
-<meta property="article:published_time" content="2020-09-16T00:29:07+08:00" />
-<meta property="article:modified_time" content="2020-09-16T00:29:07+08:00" />
+<meta property="article:published_time" content="2020-09-16T01:29:18+08:00" />
+<meta property="article:modified_time" content="2020-09-16T01:29:18+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
 
-<meta name="twitter:title" content="Django API开发：入门介绍"/>
-<meta name="twitter:description" content="[toc] 介绍 互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。 API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构"/>
+<meta name="twitter:title" content="Django for APIs: Web APIs 的由来"/>
+<meta name="twitter:description" content="第一章：Web APIs 在开始构建自己的网络API之前，请务必先回顾网络的实际是怎样运行的。 毕竟，“ Web API”实际上位于万维网的现有体系结构之上，并且依赖于包括HTTP，IP / TCP等在内的多种技术。 在本章中"/>
 
 
 
@@ -111,45 +111,136 @@
 <article>
     
     <h2 class="post-item post-title">
-        <a href="https://yuzhoustayhungry.github.io/post/djangoforapis-1/">Django API开发：入门介绍</a>
+        <a href="https://yuzhoustayhungry.github.io/post/djangoforapis-1/">Django for APIs: Web APIs 的由来</a>
     </h2>
     <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-09-16</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;2053 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;5 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/django-for-apis">Django for APIs</a>&nbsp;</span>
+        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-09-16</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;4787 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;10 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/django-for-apis">Django for APIs</a>&nbsp;</span>
     </div>
     
     
     <div class="post-content markdown-body">
-        <p>[toc]</p>
-<h1 id="介绍">介绍</h1>
-<p>互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。</p>
-<p>API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构建API的方式，但Web APIs&ndash;允许在全球范围内传输数据&ndash;以RESTful（REp resentaional State Transfer）方式构成了压倒性的结构。</p>
-<p>接下来学习如何使用Django和Django REST 框架来构建不同的RESTful web APIs。</p>
-<p>Django和Django REST Framework的结合是构建Web API的最流行和可自定义的方法之一，被世界上许多大型科技公司（包括Instagram，Mozilla，Pinterest和Bitbucket）使用。 它还非常适合初学者，因为Django的“含电池”方法掩盖了创建任何Web API所涉及的许多潜在的复杂性和安全风险。</p>
-<h2 id="为什么需要这么多api">为什么需要这么多API？</h2>
-<p>Django于2005年首次发布，当时大多数网站由一个大型整体代码库组成。 “后端”由数据库模型，URL和视图组成，这些模型与HTML，CSS和JavaScript的“前端”模板交互，而HTML，CSS和JavaScript则控制着每个网页的显示布局。</p>
-<p>但是，近年来，“ API-first”方法已经成为Web开发中的主要范例。 此方法涉及将后端与前端正式分离。 这意味着Django变成了功能强大的数据库和API，而不仅仅是网站框架。</p>
-<p>如今，可以说，在大型公司中，Django被更多地用作后端API而不是完整的整体网站解决方案！</p>
-<p>此时一个明显的问题是：“为什么要改变呢？” 传统的Django本身可以很好地工作，将Django站点转换为Web API似乎需要做很多工作。 另外，作为开发人员，您必须用另一种编程语言编写专用的前端。</p>
-<p>顺便说一下，这种将服务分为不同组件的方法被广泛称为<strong>面向服务的体系结构</strong>。</p>
-<p>然而，事实证明，将前端与后端分离有多个优点。 首先，它可以说是“面向未来的”，因为任何JavaScript前端都可以使用后端API。 鉴于前端库中的更改速度非常快-React仅在2013年发布，而Vue在2014年发布！-这非常有价值。 如果在未来几年内最终将当前的前端框架替换为更新的框架，则后端API可以保持不变。 不需要大的重写。</p>
-<p>其次，API可以支持以不同语言和框架编写的多个前端。 考虑到JavaScript用于Web前端，而Android应用程序需要Java编程语言，而iOS应用程序需要Swift编程语言。 使用传统的整体方法，Django网站无法支持这些各种前端。 但是使用内部API，这三个组件都可以与相同的基础数据库后端通信！</p>
-<p>第三，可以在系统内部和外部都使用API-first方法。</p>
-<p>API-first的主要缺点是，与传统的Django应用程序相比，<strong>它需要更多的配置</strong>。 但是，正如我们将在本书中看到的那样，出色的Django REST Framework库消除了许多这种复杂性。</p>
-<h2 id="django-rest-框架">Django REST 框架</h2>
-<p>有成百上千的第三方应用程序可为Django添加更多功能。 （您可以在Django Packages上看到完整的可搜索列表。）但是Django REST Framework可以说是Django的杀手级应用。</p>
-<p>它是成熟的，功能齐全，可自定义，可测试的，并且文档齐全。 它还有目的地模仿了Django的许多传统约定，从而使学习速度更快。 它是用Python编程语言编写的，这是一种很棒，流行且易于访问的语言。</p>
-<p>如果您已经了解Django，那么下一步就是学习Django REST Framework。 只需最少的代码，它就可以将任何现有的Django应用程序转换为Web API。</p>
-<h2 id="为什么写这本书">为什么写这本书</h2>
-<p>我写这本书的原因是，对于Django REST框架新手来说，显然缺乏良好的资源。 假设似乎每个人都已经了解API，HTTP，REST等。 我自己学习如何构建Web API的旅程令人沮丧&hellip;而且我已经对Django足够了解，因此可以写一本书！
-本书是我希望以Django REST Framework开头的指南。</p>
-<p>第1章首先简要介绍Web API和HTTP协议。</p>
-<p>在第2章中，我们将建立一个图书馆书网站，然后向其中添加一个API，以回顾传统Django和Django REST Framework之间的区别。</p>
-<p>然后在第3-4章中，我们将构建一个Todo API并将其连接到React前端。 可以使用相同的过程将任何专用的前端（Web，iOS，Android，台式机或其他）连接到Web API后端。</p>
-<p>在第5-9章中，我们构建了一个生产就绪的Blog API，其中包含完整的CRUD功能。 我们还将介绍深度权限，用户身份验证，视图集，路由器，文档等。</p>
-<p>可以在<a href="https://github.com/wsvincent/restapiswithdjango" target="_blank">Github上</a>在线找到所有章节的完整源代码。</p>
+        <h1 id="第一章web-apis">第一章：Web APIs</h1>
+<p>在开始构建自己的网络API之前，请务必先回顾网络的实际是怎样运行的。 毕竟，“ Web API”实际上位于万维网的现有体系结构之上，并且依赖于包括HTTP，IP / TCP等在内的多种技术。
+在本章中，我们将回顾Web API的基本术语：终端，资源，HTTP动词，HTTP状态码和REST。 即使您已经对这些术语感到熟悉，我还是鼓励您完整阅读本章。</p>
+<h2 id="万维网">万维网</h2>
+<p>互联网是至少从1960年代就已经存在的互连计算机网络系统。 但是，互联网的早期使用仅限于少数几个隔离的网络，这些网络主要是政府，军事或科学性质的，可以通过电子方式交换信息。 到1980年代，许多研究机构和大学都在使用Internet共享数据。 在欧洲，最大的互联网节点位于瑞士日内瓦的CERN（欧洲核研究组织），该实验室经营着世界上最大的粒子物理实验室。 这些实验产生大量数据，需要与世界各地的科学家远程共享。</p>
+<p>但是，与今天相比，1980年代的整体互联网使用量很小。 大多数人无法使用它，甚至无法理解它为什么重要。 少数Internet节点为所有流量提供动力，而使用它的计算机主要位于同一小型网络中。</p>
+<p>1989年，CERN的研究科学家蒂姆·伯纳斯·李（Tim Berners-Lee）发明了HTTP并引入了现代的万维网，这一切都改变了。 他的远见卓识是，可以将现有的超文本系统（其在计算机屏幕上显示的文本包含指向其他文档的链接（超链接））移动到Internet上。</p>
+<p>他的发明&ndash;超文本传输协议（HTTP）是第一个标准的，全球通过Internet共享文档的方式。 它引入了网页的概念：带有URL，链接和资源（例如图像，音频或视频等）的分散文档。</p>
+<p>如今，当大多数人想到“互联网”时，他们想到的是万维网（World Wide Web），这是数十亿人和计算机在线通信的主要方式。</p>
+<h2 id="urls">URLs</h2>
+<p>URL（统一资源定位符）是互联网上资源的地址。 例如，Google主页位于https://www.google.com。</p>
+<p>当您要转到Google主页时，请在网络浏览器中键入完整的URL地址。 然后，您的浏览器通过Internet发送请求，并与服务器建立了神奇的连接（我们将介绍实际发生的情况），该服务器使用在浏览器中呈现Google主页所需的数据进行响应。</p>
+<p>此<strong>请求</strong>和<strong>响应</strong>模式是所有Web通信的基础。 <strong>客户端</strong>（通常是Web浏览器，但也有本机应用程序或实际上任何与Internet连接的设备）请求信息，而<strong>服务器</strong>则以响应进行响应。</p>
+<p>由于网络通信是通过HTTP进行的，因此这些形式更正式地称为HTTP请求和HTTP响应。</p>
+<p>在给定的URL中，还有几个离散的组件。 例如，再次考虑https://www.google.com。 第一部分，https，指的是使用的scheme。 它告诉Web浏览器如何访问该位置的资源。 对于网站，通常是http或https，但是也可以是ftp（用于文件），smtp（用于电子邮件）等等。 下一部分www.google.com是网站的主机名或实际名称。 每个URL都包含一个方案和一个主机。</p>
+<p>许多网页也包含可选<strong>路径</strong>。 如果您访问https://www.python.org的Python主页，然后单击“关于”页面的链接，您将被重定向到https://www.python.org/about/。 <code>/ about</code> /是路径。
+总而言之，每个https://python.org/about/之类的URL都有三个潜在部分：</p>
+<ul>
+<li>
+<p>模式/协议-https</p>
+</li>
+<li>
+<p>主机/服务器名-www.python.org</p>
+</li>
+<li>
+<p>和（可选）路径-/ about /</p>
+</li>
+</ul>
+<h2 id="互联网协议套件">互联网协议套件</h2>
+<p>一旦我们知道了资源的实际URL，其他所有技术的全部集合就必须正常工作（一起）以将客户端与服务器连接并加载实际的网页。 这被广泛称为Internet procotol套件，并且整本书都围绕该主题编写。 但是，出于我们的目的，我们可以坚持广泛的基础知识。</p>
+<p>当用户在其网络浏览器中输入https://www.google.com并点击Enter时，会发生一些事情。 首先，浏览器需要在广阔的互联网上的某个地方找到所需的服务器。 它使用域名服务（DNS）将域名“ google.com”转换为IP地址，该IP地址是代表互联网上每个已连接设备的唯一数字序列。 使用域名是因为，与“ 172.217.164.68”这样的IP地址相比，人类更容易记住“ google.com”这样的域名。</p>
+<p>浏览器具有给定域名的IP地址后，它需要一种方法来与所需服务器建立一致的连接。 这是通过传输控制协议（TCP）进行的，该协议可在两个应用程序之间提供可靠，有序和经过错误检查的字节传输。</p>
+<p>为了在两台计算机之间建立TCP连接，客户端和服务器之间会发生三次“握手”：</p>
+<ol>
+<li>
+<p>客户端发送<code>SYN</code>给服务端，请求建立连接</p>
+</li>
+<li>
+<p>服务端响应一个<code>SYN-ACK</code>确认这次请求，传递一个连接参数</p>
+</li>
+<li>
+<p>客户端发送<code>ACK</code>回给服务器以确认连接</p>
+</li>
+</ol>
+<p>一旦建立TCP连接，两台计算机就可以开始通过HTTP通信。</p>
+<h2 id="http-动词">HTTP 动词</h2>
+<p>每个网页都包含一个地址（URL）以及一系列被批准的动作，称为HTTP动词。 到目前为止，我们主要讨论了获取网页的问题，但是也可以创建，编辑和删除内容。</p>
+<p>考虑一下Facebook网站。 登录后，您可以阅读时间轴，创建新帖子或编辑/删除现有帖子。 创建，读取，更新，删除这四个动作俗称CRUD功能，它们代表了绝大多数在线采取的动作。</p>
+<p>HTTP协议包含许多从服务器请求信息时可以使用的<strong>请求方法</strong>。 四个最常见的CRUD：它们是POST，GET，PUT和DELETE。</p>
+<p><img class="img-zoomable" src="https://i.loli.net/2020/09/16/kyiYvKaFGPLMu4t.png" alt="image-20200916010024544" /></p>
+<p>若要创建内容，请使用POST，读取内容GET，对其进行更新，然后使用DELETE进行删除。</p>
+<h2 id="终端">终端</h2>
+<p>网站由包含HTML，CSS，图像，JavaScript等的网页组成。 但是，Web API具有终结点，而终结点是带有公开数据的可用操作（HTTP动词）列表的URL（通常为JSON，这是当今最常见的数据格式，并且是Django REST Framework的默认格式）。
+例如，我们可以为一个名为mysite的新网站创建以下API端点。</p>
+<pre><code class="language-html">https://www.mysite/api/users      # Get returns all users
+https://www.mysite/api/users/&lt;id&gt; # Get returns a single user
+</code></pre>
+<p>在第一个端点/ api / users中，可用的GET请求返回所有可用用户的列表。 这种返回多个数据资源的端点称为集合。</p>
+<p>第二个端点/ api / users / <id>代表一个用户。 GET请求仅返回有关该用户的信息。</p>
+<p>如果将POST添加到第一个端点，则可以创建一个新用户，而将DELETE添加到第二个端点，则可以删除单个用户。</p>
+<p>在本书的学习过程中，我们将更加熟悉API端点，但是最终创建API涉及到一系列端点：带有关联HTTP动词的URL。</p>
+<p>网页包含HTML，CSS，图像等。 但是端点只是通过可用的HTTP动词访问数据的一种方式。</p>
+<h2 id="http">HTTP</h2>
+<p>在本章中，我们已经讨论了很多HTTP，但是在这里我们将描述HTTP的实际含义和工作方式。
+HTTP是具有现有TCP连接的两台计算机之间的请求-响应协议。 发出请求的计算机称为客户端，而响应的计算机称为服务器。 通常，客户端是Web浏览器，但也可以是iOS应用或任何与互联网连接的设备。 服务器是经过优化可通过Internet工作的任何计算机的名字。 我们需要将一台基本笔记本电脑转变为一台服务器所需的一切，就是一些特殊的软件和持久的Internet连接。</p>
+<p>每个HTTP消息均包含一个请求/状态行，请求头和可选的正文数据。 例如，这是一个示例HTTP消息，浏览器可能会发送该HTTP消息来请求位于https://www.google.com的Google主页。</p>
+<pre><code class="language-http">GET / HTTP/1.1
+Host: google.com
+Accept_Language: en-US
+</code></pre>
+<p>第一行称为请求行，它指定要使用的HTTP方法（GET），路径（/）以及要使用的特定HTTP版本（HTTP / 1.1）。</p>
+<p>随后的两行是HTTP标头：Host是域名，</p>
+<p>Accept_- Language是要使用的语言，在这种情况下是美国英语。 有许多HTTP标头可用。</p>
+<p>HTTP消息还有一个可选的第三部分，称为主体。 但是，我们只会看到带有HTTP响应的正文消息，其中包含数据。</p>
+<p>为简单起见，假设Google主页仅包含HTML“ Hello，World！” 这就是来自Google服务器的HTTP响应消息。</p>
+<pre><code class="language-http">HTTP/1.1 200 OK
+Date: Wed, 28 Oct 2019 23:26:07 GMT
+Server: gws
+Accept-Ranges: bytes
+Content-Length: 13
+Content-Type: text/html; charset=UTF-8
+
+Hello, world!
+</code></pre>
+<p>第一行是响应行，它指定我们正在使用HTTP / 1.1。 状态码200 OK指示客户端的请求已成功（稍后会更多关于状态码的信息）。</p>
+<p>接下来的八行是HTTP标头。 最后，在换行后，我们的实际正文内容为“ Hello，world！”。</p>
+<p>因此，每个HTTP消息（无论是请求还是响应）都具有以下格式：</p>
+<pre><code class="language-http">Response/request line
+Headers...
+
+(optional) Body
+</code></pre>
+<p>大多数网页包含多个资源，这些资源需要多个HTTP请求/响应周期。 如果一个网页具有HTML，一个CSS文件和一个图像，则在浏览器中呈现完整的网页之前，需要在客户端和服务器之间来回往返三趟。</p>
+<h2 id="状态码">状态码</h2>
+<p>一旦您的Web浏览器在URL上执行了HTTP请求，就不能保证一切都会真正生效！ 因此，有很长的HTTP状态代码列表可用于伴随每个HTTP响应。</p>
+<p>您可以根据以下系统判断状态码的一般类型：</p>
+<ul>
+<li>2xx 成功- 客户请求的操作已收到，理解并接受</li>
+<li>3xx 重定向 - 所请求的网址已移动</li>
+<li>4xx 客户端错误 - 发生错误，通常是客户端的URL请求错误</li>
+<li>5xx 服务端错误 - 服务器无法解决请求</li>
+</ul>
+<p>无需记住所有可用的状态代码。 通过练习，您将熟悉最常见的设置，例如200（确定），201（创建），301（永久移动），404（未找到）和500（服务器错误）。</p>
+<p>要记住的重要一点是，一般而言，任何给定的HTTP请求只有四个潜在结果：它起作用（2xx），它以某种方式重定向（3xx），客户端出错（4xx）或服务器发出错误（5xx）。</p>
+<p>这些状态代码会自动放置在每条HTTP消息顶部的请求/响应行中。</p>
+<h2 id="无状态">无状态</h2>
+<p>关于HTTP的最后一个重要点是，它是一个无状态协议。 这意味着每个请求/响应对都完全独立于前一个。 过去的交互没有存储的内存，在计算机科学中称为状态。</p>
+<p>无状态为HTTP带来了很多好处。 由于所有电子通信系统都会随着时间流逝而丢失信号，因此，如果我们没有无状态协议，那么如果不经历一个请求/响应周期，事情就会不断中断。 结果，HTTP被称为非常有弹性的分布式协议。</p>
+<p>但是缺点是，在Web应用程序中，状态管理非常重要。 说明网站是如何记住您已登录的，以及电子商务网站如何管理您的购物车。 这是我们使用现代网站的基础，但HTTP本身不支持它。</p>
+<p>历史上状态是在服务器上维护的，但是在诸如React，Angular和Vue之类的现代前端框架中，它已越来越多地转移到客户端，Web浏览器。 当我们介绍用户身份验证时，我们将详细了解状态，但是请记住，HTTP是无状态的。 这非常有利于在两台计算机之间可靠地发送信息，但不利于记住每个单独的请求/响应对之外的任何内容。</p>
+<h2 id="rest"><strong>REST</strong></h2>
+<p>代表性状态转移（REST）是Roy Fielding在其论文中于2000年首次提出的体系结构。 它是一种在Web之上（即在HTTP协议之上）构建API的方法。</p>
+<p>关于使API实际上是否为RESTful的原因，已经撰写了整本书。 但是出于我们的目的，我们将在此处重点关注<strong>三个</strong>主要特征。 每个RESTful API：</p>
+<ul>
+<li>无状态，像HTTP</li>
+<li>支持常见的HTTP动词（GET，POST，PUT，DELETE等）</li>
+<li>以JSON或XML格式返回数据</li>
+</ul>
+<p>任何RESTful API至少必须具有这三个原则。 该标准很重要，因为它提供了设计和使用Web API的一致方法。</p>
 <h2 id="总结">总结</h2>
-<p>Django和Django REST Framework是一种强大且易于访问的构建Web API的方法。 到本书结尾，您将能够使用现代最佳实践从头开始正确构建自己的Web API。 您将能够以最少的代码将任何现有的Django网站扩展到网络API。
-让我们开始！</p>
+<p>尽管现代互联网具有很多技术，但作为开发人员，我们不必从头开始实施所有技术。 Django和Django REST Framework的完美结合可以正确处理Web API涉及的大多数复杂性。 但是，重要的是要至少对所有部件如何组合在一起有一个广泛的了解。</p>
+<p>最终，Web API是端点的集合，这些端点公开了基础数据库的某些部分。 作为开发人员，我们控制每个端点的URL，可用的基础数据以及可以通过HTTP动词执行的操作。 通过使用HTTP标头，我们还可以设置各种级别的身份验证和权限，这将在本书的后面部分中介绍。</p>
 
     </div>
 </article>
@@ -190,9 +281,15 @@
         <h3>目录</h3>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#为什么需要这么多api">为什么需要这么多API？</a></li>
-    <li><a href="#django-rest-框架">Django REST 框架</a></li>
-    <li><a href="#为什么写这本书">为什么写这本书</a></li>
+    <li><a href="#万维网">万维网</a></li>
+    <li><a href="#urls">URLs</a></li>
+    <li><a href="#互联网协议套件">互联网协议套件</a></li>
+    <li><a href="#http-动词">HTTP 动词</a></li>
+    <li><a href="#终端">终端</a></li>
+    <li><a href="#http">HTTP</a></li>
+    <li><a href="#状态码">状态码</a></li>
+    <li><a href="#无状态">无状态</a></li>
+    <li><a href="#rest"><strong>REST</strong></a></li>
     <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
