@@ -6,13 +6,22 @@
     <description>Recent content on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2020 01:29:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 02:26:10 +0800</lastBuildDate>
     
 	<atom:link href="https://yuzhoustayhungry.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Django for APIs: Web APIs 的由来</title>
+      <title>Django API 开发：典型Django应用开发</title>
+      <link>https://yuzhoustayhungry.github.io/post/djangoforapis-2/</link>
+      <pubDate>Wed, 16 Sep 2020 02:26:10 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/post/djangoforapis-2/</guid>
+      <description>典型Django开发 首先，我们需要在计算机上有一个专用目录来存储代码。 它可以放置在任何地方，但为了方便起见，如果您使用的是Mac，我们可以将其放在“桌面”文件夹中。 位置真的没关系； 它只需要易于访问。 $</description>
+    </item>
+    
+    <item>
+      <title>Django API 开发: Web APIs 的由来</title>
       <link>https://yuzhoustayhungry.github.io/post/djangoforapis-1/</link>
       <pubDate>Wed, 16 Sep 2020 01:29:18 +0800</pubDate>
       
@@ -21,7 +30,7 @@
     </item>
     
     <item>
-      <title>Django API开发：入门介绍</title>
+      <title>Django API 开发：入门介绍</title>
       <link>https://yuzhoustayhungry.github.io/post/djangoforapis-0/</link>
       <pubDate>Wed, 16 Sep 2020 00:29:07 +0800</pubDate>
       
