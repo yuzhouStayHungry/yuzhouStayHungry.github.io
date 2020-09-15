@@ -6,10 +6,19 @@
     <description>Recent content on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Sep 2020 09:11:02 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 13:26:03 +0800</lastBuildDate>
     
 	<atom:link href="https://yuzhoustayhungry.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>剑指Offer 面试题22：链表中倒数第k个节点</title>
+      <link>https://yuzhoustayhungry.github.io/post/sword-for-offer22/</link>
+      <pubDate>Tue, 15 Sep 2020 13:26:03 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/post/sword-for-offer22/</guid>
+      <description>“Successful people appear to be traveling along one continual, successful road. What is not apparent is the perseverance it takes following each defeat to keep you on that road. No one I know of has ever experienced one success after another without defeats, failures, disappointments, and frustrations galore along the way. Learning to overcome those times of agony is what separates the winners from the losers.” — G. Kingsley Ward 面试题22：链表中倒数第k</description>
+    </item>
     
     <item>
       <title>剑指Offer 面试题24: 反转链表</title>
