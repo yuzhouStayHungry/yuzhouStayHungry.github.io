@@ -13,10 +13,10 @@
     
     <item>
       <title>从Go语言开始，彻底学懂数据结构与算法--线性表</title>
-      <link>https://yuzhoustayhungry.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <link>https://yuzhoustayhungry.github.io/2020/06/%E4%BB%8Ego%E8%AF%AD%E8%A8%80%E5%BC%80%E5%A7%8B%E5%BD%BB%E5%BA%95%E5%AD%A6%E6%87%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
       <pubDate>Fri, 12 Jun 2020 22:13:27 +0800</pubDate>
       
-      <guid>https://yuzhoustayhungry.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <guid>https://yuzhoustayhungry.github.io/2020/06/%E4%BB%8Ego%E8%AF%AD%E8%A8%80%E5%BC%80%E5%A7%8B%E5%BD%BB%E5%BA%95%E5%AD%A6%E6%87%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
       <description>[toc] 程序 = 数据结构 + 算法 数据结构是程序的骨架 算法是程序的灵魂 其实各种数据结构的要点&amp;ndash;无外乎：定义 + 操作。 一、数组 / 顺序表 1. 静态分配 用一个定长数组data[]存储数据，最大空间为Maxsize</description>
     </item>
     

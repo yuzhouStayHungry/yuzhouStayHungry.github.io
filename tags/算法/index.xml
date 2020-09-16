@@ -13,37 +13,37 @@
     
     <item>
       <title>剑指Offer 面试题22：链表中倒数第k个节点</title>
-      <link>https://yuzhoustayhungry.github.io/post/sword-for-offer22/</link>
+      <link>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%9822%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</link>
       <pubDate>Tue, 15 Sep 2020 13:26:03 +0800</pubDate>
       
-      <guid>https://yuzhoustayhungry.github.io/post/sword-for-offer22/</guid>
+      <guid>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%9822%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9/</guid>
       <description>“Successful people appear to be traveling along one continual, successful road. What is not apparent is the perseverance it takes following each defeat to keep you on that road. No one I know of has ever experienced one success after another without defeats, failures, disappointments, and frustrations galore along the way. Learning to overcome those times of agony is what separates the winners from the losers.” — G. Kingsley Ward 面试题22：链表中倒数第k</description>
     </item>
     
     <item>
       <title>剑指Offer 面试题24: 反转链表</title>
-      <link>https://yuzhoustayhungry.github.io/post/sword-for-offer24/</link>
+      <link>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%9824-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Mon, 14 Sep 2020 09:11:02 +0800</pubDate>
       
-      <guid>https://yuzhoustayhungry.github.io/post/sword-for-offer24/</guid>
+      <guid>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%9824-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
       <description>面试题24：反转链表 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。 示例: 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL 思路： 迭代 遍历链表，使用指针cur指向当前节点，指针prev指向cur的前驱节点。 初始</description>
     </item>
     
     <item>
       <title>剑指Offer 面试题25:合并两个有序链表</title>
-      <link>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</link>
+      <link>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%9825%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Sun, 13 Sep 2020 16:00:07 +0800</pubDate>
       
-      <guid>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-25%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%9825%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</guid>
       <description>合并两个有序链表 “Think ahead. Don&amp;rsquo;t let day-to-day operations drive out planning.” — Donald Rumsfeld 题目描述 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足递增有序的规则。 示例1： 输入：1-&amp;gt;2-</description>
     </item>
     
     <item>
       <title>剑指Offer 面试题 57：和为s的数字</title>
-      <link>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-57/</link>
+      <link>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%98-57%E5%92%8C%E4%B8%BAs%E7%9A%84%E6%95%B0%E5%AD%97/</link>
       <pubDate>Sat, 12 Sep 2020 11:01:10 +0800</pubDate>
       
-      <guid>https://yuzhoustayhungry.github.io/post/%E5%89%91%E6%8C%87offer-57/</guid>
+      <guid>https://yuzhoustayhungry.github.io/2020/09/%E5%89%91%E6%8C%87offer-%E9%9D%A2%E8%AF%95%E9%A2%98-57%E5%92%8C%E4%B8%BAs%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
       <description>面试题57: 和为s的数字 📖每日一句： “We hold ourselves back in ways both big and small, by lacking self-confidence, by not raising our hands, and by pulling back when we should be leaning in.” — Sheryl Sandberg 题目一：和为s的两个数字 题目描述： 输入一个递增排序的数组和一个数字s，在数组中查找两个数，使</description>
     </item>
     

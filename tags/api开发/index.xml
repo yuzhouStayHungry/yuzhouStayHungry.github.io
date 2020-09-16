@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API开发 on 宇宙之一粟的小屋</title>
+    <link>https://yuzhoustayhungry.github.io/tags/api%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in API开发 on 宇宙之一粟的小屋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Sep 2020 11:33:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://yuzhoustayhungry.github.io/tags/api%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django API 开发：Django REST框架快速入门</title>
+      <link>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91django-rest%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Wed, 16 Sep 2020 11:33:31 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91django-rest%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+      <description>Django REST 框架 就像其他任何第三方应用程序一样，添加了Django REST Framework。 如果本地服务器Control + c仍在运行，请确保退出它。 然后在命令行上键入以下内容。 (library) $ pipenv install djangorestframework==3.10.3 在我们的settings.</description>
+    </item>
+    
+    <item>
+      <title>Django API 开发：典型Django应用开发</title>
+      <link>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91%E5%85%B8%E5%9E%8Bdjango%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Wed, 16 Sep 2020 02:26:10 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91%E5%85%B8%E5%9E%8Bdjango%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</guid>
+      <description>典型Django开发 首先，我们需要在计算机上有一个专用目录来存储代码。 它可以放置在任何地方，但为了方便起见，如果您使用的是Mac，我们可以将其放在“桌面”文件夹中。 位置真的没关系； 它只需要易于访问。 $</description>
+    </item>
+    
+    <item>
+      <title>Django API 开发: Web APIs 的由来</title>
+      <link>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91-web-apis-%E7%9A%84%E7%94%B1%E6%9D%A5/</link>
+      <pubDate>Wed, 16 Sep 2020 01:29:18 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91-web-apis-%E7%9A%84%E7%94%B1%E6%9D%A5/</guid>
+      <description>第一章：Web APIs 在开始构建自己的网络API之前，请务必先回顾网络的实际是怎样运行的。 毕竟，“ Web API”实际上位于万维网的现有体系结构之上，并且依赖于包括HTTP，IP / TCP等在内的多种技术。 在本章中</description>
+    </item>
+    
+    <item>
+      <title>Django API 开发：入门介绍</title>
+      <link>https://yuzhoustayhungry.github.io/2020/08/django-api-%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 14 Aug 2020 00:29:07 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/2020/08/django-api-%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</guid>
+      <description>[toc] 介绍 互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。 API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构</description>
+    </item>
+    
+  </channel>
+</rss>
