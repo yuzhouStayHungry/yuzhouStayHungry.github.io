@@ -6,10 +6,19 @@
     <description>Recent content on 宇宙之一粟的小屋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Sep 2020 11:33:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2020 23:57:22 +0800</lastBuildDate>
     
 	<atom:link href="https://yuzhoustayhungry.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Django API 开发：Todo应用的React前端</title>
+      <link>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91todo%E5%BA%94%E7%94%A8%E7%9A%84react%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Sun, 20 Sep 2020 23:57:22 +0800</pubDate>
+      
+      <guid>https://yuzhoustayhungry.github.io/2020/09/django-api-%E5%BC%80%E5%8F%91todo%E5%BA%94%E7%94%A8%E7%9A%84react%E5%89%8D%E7%AB%AF/</guid>
+      <description>第 4 章：Todo应用的React前端 API的宫内在于与其他程序进行通信。 在本章中，我们将通过React前端使用上一章中的Todo API，这样您就可以了解实际中一切如何协同工作。 我选择使用React，因</description>
+    </item>
     
     <item>
       <title>Django API 开发：Django REST框架快速入门</title>
