@@ -22,7 +22,7 @@
 
 
 
-<title>Django API 开发：入门介绍 - 宇宙之一粟的小屋</title>
+<title>你最终能走多远，取决于见识 - 宇宙之一粟的小屋</title>
 
 
 <meta name="author" content="yuzhou1su" />
@@ -32,22 +32,22 @@
       content="A minimal Hugo theme with nice theme color." />
 
 
-<meta name="keywords" content="Django, API开发" />
+<meta name="keywords" content="读书笔记" />
 
 
-<meta property="og:title" content="Django API 开发：入门介绍" />
-<meta property="og:description" content="[toc] 介绍 互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。 API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构" />
+<meta property="og:title" content="你最终能走多远，取决于见识" />
+<meta property="og:description" content="你最终能走多远，取决于见识 最近刚看完的一本书《见识》，由吴军老师写的。因为看过他的《大学之路》，所以对这本书也很感兴趣，全书谈的是吴军老师的人生经验之作——关于他的见解和观点。 《见识》一书网上的读后感" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://yuzhoustayhungry.github.io/2020/08/django-api-%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/" />
+<meta property="og:url" content="https://yuzhoustayhungry.github.io/2020/09/%E4%BD%A0%E6%9C%80%E7%BB%88%E8%83%BD%E8%B5%B0%E5%A4%9A%E8%BF%9C%E5%8F%96%E5%86%B3%E4%BA%8E%E8%A7%81%E8%AF%86/" />
 <meta property="og:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
-<meta property="article:published_time" content="2020-08-14T00:29:07+08:00" />
-<meta property="article:modified_time" content="2020-09-16T00:29:07+08:00" />
+<meta property="article:published_time" content="2020-09-26T09:55:00+08:00" />
+<meta property="article:modified_time" content="2020-09-26T09:55:00+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://yuzhoustayhungry.github.io/img/og.png"/>
 
-<meta name="twitter:title" content="Django API 开发：入门介绍"/>
-<meta name="twitter:description" content="[toc] 介绍 互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。 API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构"/>
+<meta name="twitter:title" content="你最终能走多远，取决于见识"/>
+<meta name="twitter:description" content="你最终能走多远，取决于见识 最近刚看完的一本书《见识》，由吴军老师写的。因为看过他的《大学之路》，所以对这本书也很感兴趣，全书谈的是吴军老师的人生经验之作——关于他的见解和观点。 《见识》一书网上的读后感"/>
 
 
 
@@ -111,45 +111,51 @@
 <article>
     
     <h2 class="post-item post-title">
-        <a href="https://yuzhoustayhungry.github.io/2020/08/django-api-%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/">Django API 开发：入门介绍</a>
+        <a href="https://yuzhoustayhungry.github.io/2020/09/%E4%BD%A0%E6%9C%80%E7%BB%88%E8%83%BD%E8%B5%B0%E5%A4%9A%E8%BF%9C%E5%8F%96%E5%86%B3%E4%BA%8E%E8%A7%81%E8%AF%86/">你最终能走多远，取决于见识</a>
     </h2>
     <div class="post-item post-meta">
-        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-08-14</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;2053 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;5 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/django">Django</a>&nbsp;<a href="/tags/api%E5%BC%80%E5%8F%91">API开发</a>&nbsp;</span>
+        <span><ion-icon name="today"></ion-icon></ion-icon>&nbsp;2020-09-26</span><span><ion-icon name="file-tray"></ion-icon>&nbsp;1503 字</span><span><ion-icon name="stopwatch"></ion-icon>&nbsp;3 分钟</span><span><ion-icon name="pricetags"></ion-icon>&nbsp;<a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">读书笔记</a>&nbsp;</span>
     </div>
     
     
     <div class="post-content markdown-body">
-        <p>[toc]</p>
-<h1 id="介绍">介绍</h1>
-<p>互联网由RESTful API提供支持。在后台，即使最简单的在线任务也涉及到多台计算机相互交互。</p>
-<p>API（Application Programming Interface）是描述两台计算机互相通信的一种方式。尽管有多种构建API的方式，但Web APIs&ndash;允许在全球范围内传输数据&ndash;以RESTful（REp resentaional State Transfer）方式构成了压倒性的结构。</p>
-<p>接下来学习如何使用Django和Django REST 框架来构建不同的RESTful web APIs。</p>
-<p>Django和Django REST Framework的结合是构建Web API的最流行和可自定义的方法之一，被世界上许多大型科技公司（包括Instagram，Mozilla，Pinterest和Bitbucket）使用。 它还非常适合初学者，因为Django的“含电池”方法掩盖了创建任何Web API所涉及的许多潜在的复杂性和安全风险。</p>
-<h2 id="为什么需要这么多api">为什么需要这么多API？</h2>
-<p>Django于2005年首次发布，当时大多数网站由一个大型整体代码库组成。 “后端”由数据库模型，URL和视图组成，这些模型与HTML，CSS和JavaScript的“前端”模板交互，而HTML，CSS和JavaScript则控制着每个网页的显示布局。</p>
-<p>但是，近年来，“ API-first”方法已经成为Web开发中的主要范例。 此方法涉及将后端与前端正式分离。 这意味着Django变成了功能强大的数据库和API，而不仅仅是网站框架。</p>
-<p>如今，可以说，在大型公司中，Django被更多地用作后端API而不是完整的整体网站解决方案！</p>
-<p>此时一个明显的问题是：“为什么要改变呢？” 传统的Django本身可以很好地工作，将Django站点转换为Web API似乎需要做很多工作。 另外，作为开发人员，您必须用另一种编程语言编写专用的前端。</p>
-<p>顺便说一下，这种将服务分为不同组件的方法被广泛称为<strong>面向服务的体系结构</strong>。</p>
-<p>然而，事实证明，将前端与后端分离有多个优点。 首先，它可以说是“面向未来的”，因为任何JavaScript前端都可以使用后端API。 鉴于前端库中的更改速度非常快-React仅在2013年发布，而Vue在2014年发布！-这非常有价值。 如果在未来几年内最终将当前的前端框架替换为更新的框架，则后端API可以保持不变。 不需要大的重写。</p>
-<p>其次，API可以支持以不同语言和框架编写的多个前端。 考虑到JavaScript用于Web前端，而Android应用程序需要Java编程语言，而iOS应用程序需要Swift编程语言。 使用传统的整体方法，Django网站无法支持这些各种前端。 但是使用内部API，这三个组件都可以与相同的基础数据库后端通信！</p>
-<p>第三，可以在系统内部和外部都使用API-first方法。</p>
-<p>API-first的主要缺点是，与传统的Django应用程序相比，<strong>它需要更多的配置</strong>。 但是，正如我们将在本书中看到的那样，出色的Django REST Framework库消除了许多这种复杂性。</p>
-<h2 id="django-rest-框架">Django REST 框架</h2>
-<p>有成百上千的第三方应用程序可为Django添加更多功能。 （您可以在Django Packages上看到完整的可搜索列表。）但是Django REST Framework可以说是Django的杀手级应用。</p>
-<p>它是成熟的，功能齐全，可自定义，可测试的，并且文档齐全。 它还有目的地模仿了Django的许多传统约定，从而使学习速度更快。 它是用Python编程语言编写的，这是一种很棒，流行且易于访问的语言。</p>
-<p>如果您已经了解Django，那么下一步就是学习Django REST Framework。 只需最少的代码，它就可以将任何现有的Django应用程序转换为Web API。</p>
-<h2 id="为什么写这本书">为什么写这本书</h2>
-<p>我写这本书的原因是，对于Django REST框架新手来说，显然缺乏良好的资源。 假设似乎每个人都已经了解API，HTTP，REST等。 我自己学习如何构建Web API的旅程令人沮丧&hellip;而且我已经对Django足够了解，因此可以写一本书！
-本书是我希望以Django REST Framework开头的指南。</p>
-<p>第1章首先简要介绍Web API和HTTP协议。</p>
-<p>在第2章中，我们将建立一个图书馆书网站，然后向其中添加一个API，以回顾传统Django和Django REST Framework之间的区别。</p>
-<p>然后在第3-4章中，我们将构建一个Todo API并将其连接到React前端。 可以使用相同的过程将任何专用的前端（Web，iOS，Android，台式机或其他）连接到Web API后端。</p>
-<p>在第5-9章中，我们构建了一个生产就绪的Blog API，其中包含完整的CRUD功能。 我们还将介绍深度权限，用户身份验证，视图集，路由器，文档等。</p>
-<p>可以在<a href="https://github.com/wsvincent/restapiswithdjango" target="_blank">Github上</a>在线找到所有章节的完整源代码。</p>
-<h2 id="总结">总结</h2>
-<p>Django和Django REST Framework是一种强大且易于访问的构建Web API的方法。 到本书结尾，您将能够使用现代最佳实践从头开始正确构建自己的Web API。 您将能够以最少的代码将任何现有的Django网站扩展到网络API。
-让我们开始！</p>
+        <h1 id="你最终能走多远取决于见识">你最终能走多远，取决于见识</h1>
+<p>最近刚看完的一本书《见识》，由吴军老师写的。因为看过他的《大学之路》，所以对这本书也很感兴趣，全书谈的是吴军老师的人生经验之作——关于他的见解和观点。</p>
+<p><img class="img-zoomable" src="https://upload-images.jianshu.io/upload_images/5283092-473f1f4119f91255.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="见识" /></p>
+<p>《见识》一书网上的读后感会有很多，我想写一写自己看了之后感触比较多的点。</p>
+<p>全书表达的观点，有点像“你人生的高度取决于你读过的书和你遇到的人”的另一种表达方式。</p>
+<p>你读过的书可能带给你思考与气质，变成你的骨和肉。</p>
+<p>你遇到的人可能带给你见识与运气，变成你的血与气。</p>
+<h1 id="人定胜天还是各安天命">人定胜天还是各安天命</h1>
+<p>无论是人定胜天，还是各安天命。从正面的角度解释，一种表达不服输的精神，一种是传达坦然的态度。</p>
+<p>每个人都有自己的“命”和“运”。</p>
+<p>命的第一解释可能就是出身，父母给你的生命。有人认为命好等于出身好，但作者不这样认为，吴军老师说命取决于两个因素：1、环境因素；2、自己对未来走向划定的方向。</p>
+<p>第一点可能你无法选择，但也不能忽视。时代大环境如此，你不可能穿越到唐朝或清朝，那是小说改编的电视剧；家庭环境也无法变更，不可能选择自己生在帝王或土豪家吧。既然环境因素我们不能决定，但是我们可以适应这个环境。到什么山头唱什么歌。</p>
+<p>第二点刚好掌握在每个人自己的手里，你可以选择人定胜天，也可以是各安天命。你未来要走的路完全取决于自己，你的习惯、行为、思维方式；
+如何对待生命中的磨难和历练，而对待这些处理之道就决定了我们的命运。</p>
+<h1 id="人生是一条河">人生是一条河</h1>
+<p>作者把人生比喻成河流。一条河流的水量取决于长度、宽度和深度，而这三种决定了一个人的影响力。而影响力又是幸福感和满足感的来源之一，所以为了追求幸福感这一人数目的，我们可能会希望自己人数这条河更宽更长，影响更多人。</p>
+<p>在我看来，作家、明星、音乐家等可能就是长江或黄河，他们可以通过某些优秀作品经久不衰；但是我们作为一条小渠或者小溪，我们该怎么让自己更幸福呢？</p>
+<p>首先承认源头或许像是我们的出身，这个世界就是会有差别。这个世界不会亏欠我们什么，我们选择什么的姿态很重要，寒窗苦读、坚持向前。这样就不一定能成功，但至少能逆袭小部分。</p>
+<p>其实人生也需要做减法，不需要太多的选择。把目标集中到一起，不要一开始就能想着成为大海。在有限的时间做有限的事情，别拣了芝麻丢了西瓜，从小溪到小河也是可以考虑的。</p>
+<h1 id="钱不是省出来的">钱不是省出来的</h1>
+<blockquote>
+<p>人的本性是，一要生存，二要温饱三要发展。——鲁迅</p>
+</blockquote>
+<p>钱是靠挣出来的，不是省出来的。与其花时间感叹自己画10块钱买了5块钱的东西（或许5块钱的优惠券没用上），不如想想办法再赚一个10块。</p>
+<p>钱只有花出去的才是你的。生命中任何东西都是为了让我们的生活变得更多，而且生不带来死不带去。如果守着一堆外物或数字，最终都可能失去了他的意义。</p>
+<h1 id="说服人最好的方式是摆事实">说服人最好的方式是摆事实</h1>
+<p>作者关于日心说和进化论的例子我觉得很有意思，它们的出现对于人类的认知是颠覆的。对这段历史可以推荐看《世界观》一书。正是众多科学家的事实观测和理论证明，最终让我们相信了这样的观点。</p>
+<p>所以说服人最好的方式是摆事实，但是我们说服人也需要技巧。</p>
+<p>即使我们的观点非常正确，但是与其直接否定他人的看法，试着用委婉的语言风格不失为一个更好的方法。在职场中，使用比如“不是这个产品不好，而是这个产品需要升级了&hellip;”。</p>
+<h1 id="阅读的意义是什么">阅读的意义是什么？</h1>
+<p>古人说:读万卷书不如行万里路，行万里路不如阅人无数。</p>
+<p>阅读也是阅人的另一方式，如果你想碰到孔子、亚里士多德、牛顿&hellip;</p>
+<p>阅读，不仅仅是增加知识，获取信息的最佳途径，更是与作者进行深层次思想交流的最佳方式。</p>
+<p>阅读不仅仅是“读”，而是深度思考的过程。</p>
+<p>阅读是为数不多让我们审视人生不多的方法之一。</p>
+<p>人的见识一定要广博，才能遇事不慌，有事不怕，没事不乱。</p>
+<p>如果对你有帮助，希望你也能看看这本书。</p>
 
     </div>
 </article>
@@ -188,14 +194,7 @@
     
     <div class="sidebar-item sidebar-toc">
         <h3>目录</h3>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#为什么需要这么多api">为什么需要这么多API？</a></li>
-    <li><a href="#django-rest-框架">Django REST 框架</a></li>
-    <li><a href="#为什么写这本书">为什么写这本书</a></li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
+        <nav id="TableOfContents"></nav>
     </div>
     
     
